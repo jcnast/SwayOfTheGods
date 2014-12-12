@@ -117,3 +117,16 @@ function Dead()
 	// set the prev_team to cur_team
 	prev_team = cur_team;
 }
+
+function OnTriggerEnter(other : Collider)
+{
+	if (other.tag == 'Player')
+	{
+		other.transform.parent.SendMessage("ApplyDamage", damage, SendMessageOptions.DontRequireReceiver);
+		var push_dir = -object.transform.up.normalized;
+		player_control.move_direction = push_dir;
+		player_control.move_duration = 0.5;
+		player_control.move_speed = 50.0;
+		other.transform.parent.SendMessage('GetMoved', SendMessageOptions.DontRequireReceiver);
+	}
+}

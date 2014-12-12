@@ -46,9 +46,17 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CameraControl.js" />
-     <Compile Include="Assets\PlayerControl.js" />
      <Compile Include="Assets\PlayerMovement.js" />
+     <Compile Include="Assets\Scripts\CameraControl.js" />
+     <Compile Include="Assets\Scripts\Control.js" />
+     <Compile Include="Assets\Scripts\Game_control.js" />
+     <Compile Include="Assets\Scripts\blue_score.js" />
+     <Compile Include="Assets\Scripts\god1_logic.js" />
+     <Compile Include="Assets\Scripts\god2_logic.js" />
+     <Compile Include="Assets\Scripts\god3_logic.js" />
+     <Compile Include="Assets\Scripts\god4_logic.js" />
+     <Compile Include="Assets\Scripts\player_control.js" />
+     <Compile Include="Assets\Scripts\red_score.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

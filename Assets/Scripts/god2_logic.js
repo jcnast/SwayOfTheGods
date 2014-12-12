@@ -26,6 +26,7 @@ function Update()
 		if (!object.animation["god2"].enabled == true)
 		{
 			object.animation.CrossFade('god2');
+			triggered = false; // re-set the ability to do damage upon falling
 		}
 		if (Time.time > dir_time)
 		{
@@ -115,4 +116,25 @@ function Dead()
 	}
 	// set the prev_team to cur_team
 	prev_team = cur_team;
+}
+
+var triggered : System.Boolean = false; // if the damage has been applied
+function OnTriggerStay(other : Collider)
+{
+	if (!triggered)
+	{
+		if ((object.animation['god2'].time > 0.10 && object.animation['god2'].time < 0.20) || (object.animation['god2'].time > 0.40 && object.animation['god2'].time < 0.50))
+		{
+			if (other.tag == 'Player')
+			{
+				triggered = true; // damage has been applied for this rotation of the animation
+				other.transform.parent.SendMessage("ApplyDamage", damage, SendMessageOptions.DontRequireReceiver);
+				var push_dir = -other.transform.forward.normalized;
+				player_control.move_direction = push_dir;
+				player_control.move_duration = 1.0;
+				player_control.move_speed = 20.0;
+				other.transform.parent.SendMessage('GetMoved', SendMessageOptions.DontRequireReceiver);
+			}
+		}
+	}
 }
