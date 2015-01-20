@@ -10,3 +10,25 @@ In this game, you are able to kill each of the gods using you abilites, but make
 
 To play Sway of the Gods:
 
+There are supplied documents for windows, mac and linux (only the windows has been tested currently)
+
+w-a-s-d to move
+
+q and mouse-location for ranged AOE attack
+
+e for local AOE attack
+
+left-click to attack (has a very small attack range - you will probably get hurt when trying to use it)
+
+*If you die you WILL RESPAWN in 5 seconds
+
+You are on the red team, kill gods and watch you score count up! (score shown by particles in the middle of the map - in the
+sky)
+
+More gods = faster point gain
+
+Winning = FIREWORKS! (... well... firework)
+
+you will need both the SotG_ [your_ os_ here] file and the SotG_ [your_ os_ here]_Data folder in the same location to play the game.
+
+*run in windows mode as there is no UI for exiting or anything
